@@ -1,38 +1,93 @@
-html,
-body{
-    heigth: 100%;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
     font-size: 1rem;
 }
 
-.gradient{
-    background: rgb(2,97,242);
-    background: linear-gradient(
-        90deg,
-         rgba(2,0,36,1) 0%, rgba(208,127,37,1) 48%, 
-         rgba(126,84,62,0.6908964269301471) 100%
-         ); 
+.style-shadow {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.38);
 }
 
-.page-header{
-    margin-top: 6rem;
-    font-size: 1rem;
-    color: #ffff;
+.gradient {
+    background: rgb(2, 97, 242);
+    background: linear-gradient(90deg,
+            rgba(2, 0, 36, 1) 0%, rgba(208, 127, 37, 1) 48%,
+            rgba(126, 84, 62, 0.6908964269301471) 100%);
 }
 
-.feature{
-   
+#myNavbar a:not(.navbar-brand) {
+    color: #282828;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+#myNavbar li.nav-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+#myNavbar a:not(.navbar-brand):hover {
+    color: #f90;
+}
+
+#myNavbar a:not(.navbar-brand)::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f90;
+    transition: width 0.3s;
+}
+
+#myNavbar a:not(.navbar-brand):hover::after {
+    width: 100%;
+}
+
+.page-header {
+    margin-top: 4.38rem;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.feature {
     font-size: 1.25rem;
     color: #ffff;
 }
 
-.icon{
+.icon {
     color: #ffff;
     height: 5rem;
-    width:5rem;
+    width: 5rem;
     font-size: 1.75rem;
-    border-radius:100% ;
+    border-radius: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
 }
+
+.gallery {
+    background-color: whitesmoke;
+  }
+  
+  .gallery img {
+    border-radius: 5%;
+  }
+  
+  .services {
+    color: #fff;
+  }
+  
+  footer {
+    color: #fff;
+    font-size: 1rem;
+    margin: 4;
+    padding: 1rem;
+    
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
