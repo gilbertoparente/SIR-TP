@@ -22,6 +22,7 @@ body {
     color: #282828;
     transition: color 0.3s;
     font-weight: 500;
+    margin-right: 5px;
 }
 
 #myNavbar li.nav-item:not(:last-child) {
