@@ -6,7 +6,7 @@ Esta Landing Page foi desenvolvida tendo como base um tuturial online:
 
 https://www.youtube.com/watch?v=1v_XcJsGtyA
 
-Foram realizadas por nós alterações ao projeto apresentado aplicando  conteúdos do Boostrap.
+Foram realizadas alterações ao projeto apresentado aplicando  conteúdos do Boostrap.
 
 
 # Considerações
@@ -18,3 +18,8 @@ Foram realizadas por nós alterações ao projeto apresentado aplicando  conteú
 Landing Page foi publicada no 000Webhost, e pode ser acedido pelo seguinte link:
 
 https://recipres4all.000webhostapp.com/
+
+# GITHUB
+Código do Projeto está publicado no GitHub:
+
+https://github.com/gilbertoparente/SIR-TP.git
