@@ -29,10 +29,17 @@ https://github.com/gilbertoparente/SIR-TP.git
 Landing Page foi dividida em 8 secções:
 
 Barra de Navegação - menu com as opções da Landing Page 
+
 Apresentação - Uma breve apresentação da página com possibilidade de efeutar registo. o envio de email não realiza qualquer operação
+
 Principais Utilizadores - Uma secção com fotos com chefes de cozinha que utilizam a aplicação
+
 Quem Somos - Descrição da página com as ações possíveis
+
 Galeria - galeria de fotos num Carrosel com as receitas mais vistas
+
 Vantagens - Vantagens que os utilizadores podem ter usando a nossa aplicação
+
 Contatos - Contatos para os utilizadores enviarem mensagens
+
 Rodapé - Rodapé com informação sobre a empresa(Redes sociais) e plataforma de desenvolviemnto - Bootstrap
