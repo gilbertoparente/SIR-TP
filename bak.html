@@ -1,3 +1,9 @@
+<?php 
+
+require "db/connection.php";
+$pdo = pdo_connect_mysql();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -31,7 +37,7 @@
               <a class="nav-link" href="#contactos">Contactos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Entrar">Entrar</a>
+              <a class="nav-link" href="conta.html">Entrar</a>
             </li>
           </ul>
         </div>
@@ -344,5 +350,69 @@
       });
     </script>
 
+    <script>
+      // Adiciona um ouvinte de evento de clique ao botão "Entrar"
+      document.getElementById('login').addEventListener('click', function() {
+          let email = document.getElementById('loginEmail').value;
+          let password = document.getElementById('loginPassword').value;
+
+          // Envia uma solicitação AJAX para o backend para autenticar o usuário
+          // Exemplo: usar a Fetch API para enviar dados para um arquivo PHP
+          fetch('backend/login.php', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ email, password }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  alert('Login bem-sucedido!');
+                  // Redireciona para a página principal do sistema após o login
+                  window.location.href = 'dashboard.php';
+              } else {
+                  alert('Falha no login. Verifique suas credenciais.');
+              }
+          })
+          .catch(error => console.error('Erro:', error));
+      });
+  </script>
+
   </body>
 </html>
+
+
+<!-- login.php-->
+
+// Verifica se a solicitação é do tipo POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtém os dados do JSON enviado pelo frontend
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    // Verifica se os campos de e-mail e senha estão presentes
+    if (isset($data['email']) && isset($data['password'])) {
+        // Realiza a autenticação no banco de dados (substitua com sua lógica real)
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+        $stmt->execute([$data['email'], $data['password']]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // Autenticação bem-sucedida
+            $response = ['success' => true];
+        } else {
+            // Autenticação falhou
+            $response = ['success' => false];
+        }
+
+        // Retorna a resposta como JSON
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit;
+    }
+}
+
+// Se os campos de e-mail e senha não foram recebidos, retorna uma resposta de erro
+$response = ['success' => false, 'error' => 'Campos de e-mail e senha são obrigatórios.'];
+header('Content-Type: application/json');
+echo json_encode($response);

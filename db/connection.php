@@ -1,5 +1,11 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+unset($_SESSION["Email_User"]);
+unset($_SESSION["Password_User"]);
+unset($_SESSION["Role"]);
 function pdo_connect_mysql() {
     $DATABASE_HOST = "localhost";
     $DATABASE_USER = "root";
